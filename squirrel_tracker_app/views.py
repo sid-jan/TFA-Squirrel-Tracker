@@ -39,7 +39,65 @@ def add_sighting(request):
         form = SquirrelFormShort()
     context = {'form':form}
     return render(request,'squirrel_tracker_app/add.html',context)
+ 
+def sighting_stats(request):
+    am_count = 0
+    pm_count = 0
+    running_count = 0
+    foraging_count = 0
+    chasing_count = 0
+    climbing_count = 0
+    eating_count = 0
+    approaches_count = 0
+    kuks_count = 0
+    quaas_count = 0
+    flag_count = 0
+    twitch_count = 0
+    moans_count = 0
+    for  s in  Squirrel.objects.all():
+       if s.Shift == 'AM':
+           am_count += 1
+       if s.Shift == 'PM':
+            pm_count += 1
+       if s.Running == True:
+            running_count += 1
+       if s.Foraging == True:
+            foraging_count += 1
+       if s.approaches == True:
+            approaches_count += 1
+       if s.moans == True:
+            moans_count += 1
+       if s.kuks == True:
+            kuks_count += 1
+       if s.quaas == True:
+            quaas_count += 1
+       if s.tail_flags == True:
+            flag_count += 1
+       if s.tail_twitches == True:
+            twitch_count += 1
+       if s.Chasing == True:
+            chasing_count += 1
+       if s.Climbing == True:
+            climbing_count += 1
+       if s.Eating == True:
+            eating_count += 1
+    context ={
+             'AM_count' : am_count,
+             'PM_count' : pm_count,
+             'Running' : running_count,
+             'Foraging' : foraging_count,
+             'Approaches' : approaches_count,
+             'Chasing' : chasing_count,
+             'Climbing' : climbing_count,
+             'Eating' : eating_count,
+             'Kuks' : kuks_count,
+             'Quaas' : quaas_count,
+             'Flag' : flag_count,
+             'Twitch' : twitch_count,
+             'Moans' : moans_count,
+        }
+    return render(request, 'squirrel_tracker_app/stat.html', context)  
 
-
-
-# Create your views here.
+def main_page(request):
+    squirrel = 'Squirrel Tracker'
+    return render(request, 'squirrel_tracker_app/main.html',{'Squirrel': squirrel})

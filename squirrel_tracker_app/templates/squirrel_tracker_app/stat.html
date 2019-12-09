@@ -1,0 +1,61 @@
+<!doctype>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <title> Stats Page </title>
+        <a href='/squirrel_tracker_app/map/' style="background-color:#DEDEDE;left:1700px;top:10px; position:absolute; float:right"><img src='https://www.pngfind.com/pngs/m/45-451203_map-icon-png-map-location-icon-png-transparent.png' width='30' height='30' title="Click to go to squirrel sighting map." /></a>
+    <a href='/squirrel_tracker_app/add/' style="background-color:#DEDEDE;left:1750px;top:10px; position:absolute; float:right"><img src='https://www.freepnglogos.com/uploads/plus-icon/plus-svg-png-icon-download-onlinewebfontsm-4.png' width='30' height='30' title="Click to add squirrel new squirrel sighting." /></a>
+    <a href='/squirrel_tracker_app/sightings/' style="background-color:#DEDEDE;left:1800px;top:10px; position:absolute; float:right"><img src='https://www.pngfind.com/pngs/m/70-704188_icon-png-edit-edit-icon-png-transparent-png.png' width='30' height='30' title="Click to go to squirrel stats view." /></a>
+    <a href='/squirrel_tracker_app/' style="background-color:#DEDEDE;left:1850px;top:10px; position:absolute; float:right"><img src='https://www.freepnglogos.com/uploads/logo-home-png/chimney-home-icon-transparent-1.png' width='30' height='30' title="Click to go back to main page." /></a>
+    <h1 style="background-color:#DEDEDE;font_size:120%;color:#D2691E"><b> Squirrel sightings statistics</b></h1>
+</head>
+
+<body style="background-color:#DEDEDE;">
+    <div id="1" class="card1" style="width: 24rem;left:200px;top:200px; position:absolute; float:left">
+        <img align="center" style="background-color:#D3D3D3;" class="card-img-top" src="https://media.npr.org/assets/img/2017/04/25/istock-115796521-fcf434f36d3d0865301cdcb9c996cfd80578ca99-s800-c85.jpg" height="240" width="240">
+        <div class="card-body" style="background-color:#949494;">
+                <h5 class="card-title" style="color:#ffffff;font_size:100%"><b><u> Activity Stats</b></u></h5>
+            <p class="card-text" style="color:#ffffff;font_size:80%">Stats about the squirrel sighting activities.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Number of squirrels running: {{ Running }}</li>
+            <li class="list-group-item">Number of squirrels foraging: {{ Foraging }}</li>
+            <li class="list-group-item">Number of squirrels climbing: {{ Climbing }}</li>
+            <li class="list-group-item">Number of squirrels chasing: {{Chasing }}</li>
+            <li class="list-group-item">Number of squirrels eating: {{Eating }}</li>
+        </ul>
+    </div>
+    <div id="2" class="card2" style="width: 24rem;left:800px;top:200px; position:absolute; float:right">
+        <img class="card-img-top" src="https://pixel.nymag.com/imgs/fashion/daily/2019/03/15/15-squirrel.w1200.h1200.jpg" height="240" width="240">
+        <div class="card-body" style="background-color:#949494;">
+                <h5 class="card-title" style="color:#ffffff;font_size:100%"><b><u>Squirrel Alarm call Stats</b></u></h5>
+            <p class="card-text" style="color:#ffffff;font_size:80%">Stats about the different squirrel alarm calls.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Number of squirrels exhibiting kuks: {{ Kuks }}</li>
+            <li class="list-group-item">Number of squirrels exhibiting quaas: {{ Quaas }}</li>
+            <li class="list-group-item">Number of squirrels exhibiting tail flags: {{ Flag }}</li>
+            <li class="list-group-item">Number of squirrels exhibiting tail twitches: {{ Twitch }}</li>
+            <li class="list-group-item">Number of squirrels exhibiting approaches: {{ Approaches }}</li>
+
+        </ul>
+    </div>
+
+    <div id="3" class="card3" style="width: 24rem;left:1400px;top:200px; position:absolute; float:right">
+        <img class="card-img-top" src="https://s3-us-west-1.amazonaws.com/k1w1-aha-blog/uploads-v2/2018/04/office-squirrel.jpg" height="240" width="240">
+        <div class="card-body" style="background-color:#949494;">
+                <h5 class="card-title" style="color:#ffffff;font_size:100%"><b><u>Time of day Stats</b></u></h5>
+            <p class="card-text" style="color:#ffffff;font_size:80%">Stats about the time of squirrel sighting.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Number of day sightings(AM): {{ AM_count }}</li>
+            <li class="list-group-item">Number of evening sightings(PM): {{ PM_count }}</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
