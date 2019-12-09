@@ -12,8 +12,8 @@ class Command(BaseCommand):
             for item in Data:
                 form_date= item['Date'][4:] + "-" + item['Date'][:2] + "-" + item['Date'][2:4]
                 s=Squirrel(
-                Latitude=item['X'],
-                Longitude=item['Y'],
+                Latitude=item['Y'],
+                Longitude=item['X'],
                 Unique_Squirrel_ID=item['Unique Squirrel ID'],
                 Hectare=item['Hectare'],
                 Shift=item['Shift'],

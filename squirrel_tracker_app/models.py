@@ -37,7 +37,7 @@ class Squirrel(models.Model):
     
 
     location_options = (
-            (GROUND_PLANE, 'GROUND PlANE'),
+            (GROUND_PLANE, 'GROUND PLANE'),
             (ABOVE_GROUND, 'ABOVE GROUND'),
         )
     
@@ -58,7 +58,9 @@ class Squirrel(models.Model):
     Unique_Squirrel_ID = models.CharField(
             null=False,
             help_text = 'Unique ID of squirrel sighting',
-            max_length=14)
+            max_length=14,
+            primary_key = True
+            )
     
     Hectare = models.CharField(
             null = False,
@@ -97,6 +99,7 @@ class Squirrel(models.Model):
             help_text= 'Highlight color of the fur of the squirrel',
             blank=True
             )
+
     Combination_of_primary_and_highlight_color = models.CharField(max_length=70, blank=True)
     
     Color_notes = models.CharField(max_length = 100,
