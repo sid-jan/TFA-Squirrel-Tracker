@@ -23,7 +23,7 @@ def edit_sighting(request,Unique_Squirrel_ID):
         form = SquirrelForm(request.POST, instance = squirrel)
         if form.is_valid():
             form.save()
-            return redirect (f'squirrel_tracker_app/sightings/{Unique_Squirrel_ID}')
+            return redirect (f'/sightings/{Unique_Squirrel_ID}')
     else:
         form = SquirrelForm(instance=squirrel)
     context = {'form':form}
@@ -34,7 +34,7 @@ def add_sighting(request):
         form = SquirrelFormShort(request.POST)
         if form.is_valid():
             form.save()
-            return redirect (f'squirrel_tracker_app/sightings/')
+            return redirect (f'/sightings/')
     else:
         form = SquirrelFormShort()
     context = {'form':form}
